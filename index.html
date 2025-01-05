@@ -76,10 +76,10 @@
     <script>
         function redirectToDiscord() {
             const clientId = '1325227750323257365'; // Replace with your bot's client ID
-            const redirectUri = 'https://discord.com/oauth2/authorize?client_id=1325227750323257365&permissions=8&response_type=code&redirect_uri=file%3A%2F%2F%2Fc%253A%2FUsers%2FArvin%2FDesktop%2Fdc%2520ip%2Findex.html&integration_type=0&scope=identify+bot'; // Replace with your desired redirect URI
+            const redirectUri = 'http://localhost:3000/redirect'; // Replace with your desired redirect URI
             const scope = 'identify guilds.join'; // Required permissions
 
-            const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}`;
+            const authUrl = `https://discord.com/oauth2/authorize?client_id=1325227750323257365&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fredirect&scope=identify+guilds+guilds.join+guilds.members.read`;
 
             window.location.href = authUrl;
         }
