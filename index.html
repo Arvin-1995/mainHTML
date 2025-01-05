@@ -76,10 +76,10 @@
     <script>
         function redirectToDiscord() {
             const clientId = '1325227750323257365'; // Replace with your bot's client ID
-            const redirectUri = 'http://localhost:3000/redirect'; // Replace with your desired redirect URI
+            const redirectUri = 'https://arvin-1995.github.io/Erfolgreich/'; // Replace with your desired redirect URI
             const scope = 'identify guilds.join'; // Required permissions
 
-            const authUrl = `https://discord.com/oauth2/authorize?client_id=1325227750323257365&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fredirect&scope=identify+guilds+guilds.join+guilds.members.read`;
+            const authUrl = `https://discord.com/oauth2/authorize?client_id=1325227750323257365&response_type=code&redirect_uri=https%3A%2F%2Farvin-1995.github.io%2FErfolgreich%2F&scope=identify+guilds+guilds.join+guilds.members.read`;
 
             window.location.href = authUrl;
         }
